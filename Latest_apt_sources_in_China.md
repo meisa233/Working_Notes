@@ -1,5 +1,7 @@
 ### apt的源的文件位置
+```
 /etc/apt/sources.list
+```
 ### 至2020.10.26无问题的国内apt源
 ```
 deb-src http://archive.ubuntu.com/ubuntu xenial main restricted #Added by software-properties
