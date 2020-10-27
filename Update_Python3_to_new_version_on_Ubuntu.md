@@ -31,7 +31,7 @@ pip3-V
 ```
 ### 2.删除lsb_release
 来源:https://github.com/pypa/pip/issues/4924<br />
-不完成这步的话，在使用```pip3 install xxx(库名称)```会出现
+不完成这步的话，在使用```pip3 install xxx(库名称)```时会出现
 ```
 return Command 'lsb_release -a' returned non-zero exit status 1.
 ```
