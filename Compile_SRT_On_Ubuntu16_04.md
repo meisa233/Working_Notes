@@ -20,7 +20,7 @@ mkdir build
 ```
 #### 4.配置(在srt文件夹中)
 ```
-./configure --prefix=./build/(build文件夹的路径) --with-compiler-prefix=/usr/bin/
+./configure --prefix=./build/(build文件夹的路径,注意一下这里最后是有/的) --with-compiler-prefix=/usr/bin/
 make
 make install
 ```
