@@ -3,6 +3,10 @@ windows和windows互传的命令
 ```
 https://github.com/Haivision/srt/issues/645
 ```
+SRT编译成功后的测试命令（传输文件、传输流视频）
+```
+https://blog.csdn.net/u014162133/article/details/106265192
+```
 srt的docker
 ```
 https://hub.docker.com/r/miyukki/srt
