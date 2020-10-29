@@ -3,6 +3,12 @@
 ```
 https://github.com/Haivision/srt
 ```
+### srt-file-transmit
+选项说明
+```
+https://manpages.debian.org/testing/srt-tools/srt-file-transmit.1.en.html
+```
+
 windows和windows互传的命令
 ```
 https://github.com/Haivision/srt/issues/645
