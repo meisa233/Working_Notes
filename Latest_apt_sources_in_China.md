@@ -33,4 +33,16 @@ deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security universe
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security multiverse
+
+deb https://mirrors.ustc.edu.cn/ubuntu/ bionic main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+
 ```
