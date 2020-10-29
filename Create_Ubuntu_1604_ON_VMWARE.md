@@ -17,4 +17,5 @@ sudo rm /var/lib/dpkg/lock
 ps -e | grep apt
 kill -9 pid号
 ```
+
 参考：https://blog.csdn.net/u010098331/article/details/50782178
