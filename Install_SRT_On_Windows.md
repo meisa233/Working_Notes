@@ -35,7 +35,7 @@ srt-file-transmit.exe "file://文件地址（注意分隔符是/） srt://目标
 ```
 注意，在windows上，cmd中当前的目录应当是要传送的文件所在的目录，比如你要传送c盘下的某个文件，就需要切换到c盘，然后再执行上面的命令，例子
 ```
-srt-file-transmit.exe "file://C:、srt_transmit_test.png" srt://192.168.32.131:5002
+srt-file-transmit.exe "file://C:/srt_transmit_test.png" srt://192.168.32.131:5002
 ```
 接收端（Ubuntu为例）
 ```
