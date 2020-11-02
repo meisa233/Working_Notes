@@ -18,7 +18,7 @@ http://repo.msys2.org/distrib/x86_64/
 ```
 https://packages.msys2.org/package/mingw-w64-x86_64-srt?repo=mingw64
 ```
-打开msys2(C:\msys64\msys2.exe)<br />
+以管理员权限打开msys2(C:\msys64\msys2.exe)<br />
 安装transmit-file-srt所在的工具包
 ```
 pacman -S mingw-w64-x86_64-srt
