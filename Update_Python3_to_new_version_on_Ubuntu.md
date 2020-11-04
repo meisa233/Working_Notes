@@ -12,6 +12,19 @@ sudo apt-get install zlib1g-dev libbz2-dev libssl-dev libncurses5-dev libsqlite3
 ↑这一步出问题，提示无法安装各种依赖需要手动安装的情况的话，建议重装系统。
 #### (3)下载python安装包
 在[python官网](https://www.python.org/downloads/)下载需要安装的版本(源码），一般是后缀为.tgz的文件
+#### (4)解压与安装
+```
+tar zxvf Python-3.8.2.tgz #解压
+```
+```
+cd Python-3.8.2
+sudo mkdir -p /usr/local/python3 #建立安装目录
+
+#后面加上 --enable-optimizations 会自动安装pip3及优化配置
+./configure --prefix=/usr/local/python3  --enable-optimizations
+make
+sudo make install
+```
 #### (4)删除软连接
 ```
 sudo rm -rf /usr/bin/python3
