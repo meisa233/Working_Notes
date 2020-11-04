@@ -25,19 +25,19 @@ sudo mkdir -p /usr/local/python3 #建立安装目录
 make
 sudo make install
 ```
-#### (4)删除软连接
+#### (5)删除软连接
 ```
 sudo rm -rf /usr/bin/python3
 sudo rm -rf /usr/bin/pip3
 ```
-#### (5)新建软连接
+#### (6)新建软连接
 ```
 #添加python3的软链接
 sudo ln -s /usr/local/python3/bin/python3.8 /usr/bin/python3
 #添加 pip3 的软链接
 sudo ln -s /usr/local/python3/bin/pip3.8 /usr/bin/pip3
 ```
-#### (6)检测版本
+#### (7)检测版本
 ```
 python3 -V
 pip3-V
