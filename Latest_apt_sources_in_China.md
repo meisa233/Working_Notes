@@ -46,3 +46,19 @@ deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-proposed main restricted universe
 deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
 
 ```
+### 可能出现的错误
+#### (1)  sudo apt update失败
+错误提示：
+```
+Reading package lists... Done
+E: Could not get lock /var/lib/apt/lists/lock - open (11: Resource temporarily unavailable)
+E: Unable to lock directory /var/lib/apt/lists/
+```
+解决方法：
+```
+ps -e |grep apt
+```
+然后把apt占用的进程号杀死
+```
+sudo kill -9 进程号
+```
