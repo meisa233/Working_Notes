@@ -40,7 +40,7 @@ sudo ln -s /usr/local/python3/bin/pip3.8 /usr/bin/pip3
 #### (7)检测版本
 ```
 python3 -V
-pip3-V
+pip3 -V
 ```
 ### 2.删除lsb_release
 来源:https://github.com/pypa/pip/issues/4924<br />
