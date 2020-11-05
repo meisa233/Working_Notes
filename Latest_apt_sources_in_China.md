@@ -62,3 +62,16 @@ ps -e |grep apt
 ```
 sudo kill -9 进程号
 ```
+#### (2) sudo apt update提示依赖未满足
+```
+The following packages have unmet dependencies:
+ python3-aptdaemon.pkcompat : Conflicts: packagekit
+                              Conflicts: packagekit:i386
+```
+解决方法：
+```
+sudo apt-get -f autoremove
+sudo apt-get update
+
+sudo apt-get upgrade
+```
