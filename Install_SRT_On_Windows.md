@@ -41,3 +41,4 @@ srt-file-transmit.exe "file://C:/srt_transmit_test.png" srt://192.168.32.131:500
 ```
 ./srt-file-transmit（srt-file-transmit的地址） srt://5002（端口号）/?mode=listener file:///tmp/（接收地址）
 ```
+ps:加上在运行srt-file-transmit时加上选项-v可以得到更详细的输出。
