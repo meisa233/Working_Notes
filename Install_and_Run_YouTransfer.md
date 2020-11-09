@@ -3,7 +3,7 @@
 https://github.com/YouTransfer/YouTransfer
 ```
 ### 安装方式
-#### 1.安装docker
+#### 1.安装docker(在Ubuntu 16.04上)
 ##### (1) docker官网
 ```
 https://docs.docker.com/get-docker/
@@ -44,3 +44,17 @@ docker run -d \
 -p 80:5000 \
 remie/youtransfer:stable
 ```
+#### 4.停止docker
+```
+sudo docker ps
+···
+查看容器ID<br />
+得到
+```
+CONTAINER ID: d7b54f7e235d
+```
+停止容器，即
+```
+sudo docker stop CONTAINER ID
+```
+
