@@ -75,3 +75,24 @@ sudo apt-get update
 
 sudo apt-get upgrade
 ```
+2020.11.10出现一个新bug
+```
+The following packages have unmet dependencies:
+ perl-modules-5.22 : Conflicts: perl-modules
+                     Conflicts: perl-modules:i386
+E: Broken packages
+```
+该提示表示perl-modules-5.22包损坏了，所以解决它的方法就是卸载。
+```
+sudo remove perl-modules-5.22
+```
+第二个bug
+```
+dpkg: dependency problems prevent processing triggers for plymouth-theme-ubuntu-text:
+ plymouth-theme-ubuntu-text depends on lsb-release; however:
+  Package lsb-release is not configured yet.
+```
+解决方法（来源：https://askubuntu.com/questions/892501/apt-get-command-returning-error-in-plymouth-theme-ubuntu-text）
+```
+sudo dpkg --configure -a
+```
