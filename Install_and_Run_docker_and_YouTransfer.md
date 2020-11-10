@@ -40,6 +40,34 @@ sub   rsa4096 2017-02-22 [S]
 ```
 sudo docker run hello-world
 ```
+##### 容易出现的bug
+###### 1.无法找到相应的包
+以下bug在输入
+```
+ $ sudo apt-get install docker-ce docker-ce-cli containerd.io
+```
+出现
+```
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Package docker-ce is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+
+E: Package 'docker-ce' has no installation candidate
+E: Unable to locate package docker-ce-cli
+E: Unable to locate package containerd.io
+E: Couldn't find any package by glob 'containerd.io'
+E: Couldn't find any package by regex 'containerd.io'
+```
+解决方法（来源：https://elementaryos.stackexchange.com/questions/22040/installing-docker-community-edition-fails-with-missing-docker-ce-package）
+```
+$ sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+```
 #### 2.下载docker的镜像
 ```
 docker pull remie/youtransfer:stable
