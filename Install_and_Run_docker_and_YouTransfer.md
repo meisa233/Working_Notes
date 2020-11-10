@@ -32,6 +32,14 @@ pub   rsa4096 2017-02-22 [SCEA]
 uid           [ unknown] Docker Release (CE deb) <docker@docker.com>
 sub   rsa4096 2017-02-22 [S]
 ```
+```
+ $ sudo apt-get update
+ $ sudo apt-get install docker-ce docker-ce-cli containerd.io
+```
+测试docker是否能正常运行
+```
+sudo docker run hello-world
+```
 #### 2.下载docker的镜像
 ```
 docker pull remie/youtransfer:stable
