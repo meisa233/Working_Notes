@@ -83,7 +83,7 @@ remie/youtransfer:stable
 #### 4.停止docker
 ```
 sudo docker ps
-···
+```
 查看容器ID<br />
 得到
 ```
