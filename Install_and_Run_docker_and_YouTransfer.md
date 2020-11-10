@@ -72,6 +72,18 @@ $ sudo add-apt-repository \
 ```
 docker pull remie/youtransfer:stable
 ```
+在国内的话，pull会比较慢，所以我们修改一下pull的源
+```
+[root@localhost ~]# /etc/docker
+[root@localhost ~]# vi /etc/docker/daemon.json
+{
+"registry-mirrors": ["https://9cpn8tt6.mirror.aliyuncs.com"]
+}
+
+[root@localhost ~]# systemctl daemon-reload
+[root@localhost ~]# systemctl restart docker
+```
+↑该命令需要以root身份运行
 #### 3.运行docker
 ```
 docker run -d \
