@@ -1,5 +1,7 @@
 仅仅只是开发的话，不太推荐升级系统自带的python，真的非常容易翻车，因为Ubuntu自身的很多东西依赖于系统自带的python3.5。<br />
-建议自己安装一个新的python放到anaconda里面。
+建议自己安装一个新的python放到anaconda里面。<br />
+python多版本管理：<br />
+https://www.cnblogs.com/jasonboboblog/p/12375370.html
 ### 1.安装新python
 来源:[cnblogs的一篇博文](https://www.cnblogs.com/jsdy/p/12694908.html)
 #### (1)更新apt
