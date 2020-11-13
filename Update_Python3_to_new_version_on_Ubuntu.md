@@ -1,14 +1,18 @@
-仅仅只是开发的话，不太推荐升级系统自带的python，真的非常容易翻车，因为Ubuntu自身的很多东西依赖于系统自带的python3.5。<br />
-建议自己安装一个新的python放到anaconda里面。<br />
-python多版本管理：<br />
+# 请不要尝试升级Ubuntu系统本身自带的Python3,
+## 请选择在Ubuntu系统中多版本共存
+由于Ubuntu的很多包依赖于系统预安装好的python3.5，升级之后，系统本身的/usr/bin/python3所指向的python版本改变，很多包会安装不上的！！！
+<br />
+### 1.python多版本管理：
 https://www.cnblogs.com/jasonboboblog/p/12375370.html
-### 1.安装新python
+### 2.安装新python
 来源:[cnblogs的一篇博文](https://www.cnblogs.com/jsdy/p/12694908.html)
 #### (1)更新apt
 [建议换成国内源](https://github.com/meisa233/Working_Notes/blob/main/Latest_apt_sources_in_China.md)
 ```
 sudo apt update
+sudo apt upgrade
 ```
+如果有询问是否要升级当前包的选项，请选择保持（Keep）当前版本的选项。
 #### (2)安装依赖库
 ```
 sudo apt-get install zlib1g-dev libbz2-dev libssl-dev libncurses5-dev libsqlite3-dev libreadline-dev tk-dev libgdbm-dev libdb-dev libpcap-dev xz-utils libexpat1-dev liblzma-dev libffi-dev libc6-dev
@@ -26,44 +30,22 @@ sudo mkdir -p /usr/local/python3 #建立安装目录
 
 #后面加上 --enable-optimizations 会自动安装pip3及优化配置
 ./configure --prefix=/usr/local/python3  --enable-optimizations
-make
+make -j8 # -j8会加速
 sudo make install
 ```
-#### (5)删除软连接
-```
-sudo rm -rf /usr/bin/python3
-sudo rm -rf /usr/bin/pip3
-```
-#### (6)新建软连接
+#### (5)新建软连接
+##### 注意最后一个参数不要与系统本身存在的软连接名字相同!
 ```
 #添加python3的软链接
-sudo ln -s /usr/local/python3/bin/python3.8 /usr/bin/python3
+sudo ln -s /usr/local/python3/bin/python3.8 /usr/bin/python3.8
 #添加 pip3 的软链接
-sudo ln -s /usr/local/python3/bin/pip3.8 /usr/bin/pip3
+sudo ln -s /usr/local/python3/bin/pip3.8 /usr/bin/pip3.8
 ```
-#### (7)检测版本
+#### (6)检测版本
 ```
 python3 -V
 pip3 -V
 ```
-### 2.删除lsb_release
-来源:https://github.com/pypa/pip/issues/4924<br />
-不完成这步的话，在使用```pip3 install xxx(库名称)```时会出现
-```
-return Command 'lsb_release -a' returned non-zero exit status 1.
-```
-这样的问题，PyCharm是无法创建虚拟环境的。
-命令如下：
-```
-sudo rm /usr/bin/lsb_release
-```
-### 3.修复Ctrl + Alt + T快捷键
-由于终端依赖于python3.5，因此在修改python3的版本之后，该快捷键失效，所以现在需要将python3的挂载点修改为python3.5<br />
-修改方法：
-```
-cd /usr/bin
-sudo gedit gnome-terminal
-```
 将开头的第一行中的```#!/usr/bin/python3```修改为```#!/usr/bin/python3.5```
-### 4.bug:apt安装失败，Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend)
+### 3.bug:apt安装失败，Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend)
 https://blog.csdn.net/shimadear/article/details/90598646
