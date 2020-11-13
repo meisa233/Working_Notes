@@ -1,4 +1,4 @@
-# 请不要尝试升级Ubuntu系统本身自带的Python3,
+# 请不要尝试升级Ubuntu系统本身自带的Python3
 ## 请选择在Ubuntu系统中多版本共存
 由于Ubuntu的很多包依赖于系统预安装好的python3.5，升级之后，系统本身的/usr/bin/python3所指向的python版本改变，很多包会安装不上的！！！
 <br />
