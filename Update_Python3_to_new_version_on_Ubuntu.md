@@ -65,3 +65,5 @@ cd /usr/bin
 sudo gedit gnome-terminal
 ```
 将开头的第一行中的```#!/usr/bin/python3```修改为```#!/usr/bin/python3.5```
+### 4.bug:apt安装失败，Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend)
+https://blog.csdn.net/shimadear/article/details/90598646
