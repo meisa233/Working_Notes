@@ -35,7 +35,7 @@ https://github.com/meisa233/Working_Notes/blob/main/Latest_apt_sources_in_China.
 sudo apt upgrade
 ```
 如果遇到询问是否需要更新版本的提示框，请选择保持当前版本（以keep开头的选项）<br />
-<br />
+
 ### 若update时遇见AppStream cache update completed, but some metadata was ignored due to errors的bug
 解决方案(来源：https://www.cnblogs.com/G921123/p/10502165.html)
 ```
