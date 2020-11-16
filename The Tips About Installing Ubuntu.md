@@ -42,3 +42,17 @@ sudo apt upgrade
 sudo rm /var/lib/dpkg/lock
 sudo apt-get update
 ```
+## 5.安装Unity
+请务必安装，不然upgrade之后系统的任务栏很有可能会由于某些bug消失。<br />
+来源：https://www.cnblogs.com/aaron-agu/p/10523032.html
+```
+sudo apt-get update
+
+sudo apt-get install --reinstall ubuntu-desktop     # 如果有依赖导致安装不成功使用 aptitude install ubuntu-desktop
+
+sudo apt-get install unity                                      # 如果有依赖导致安装不成功使用 aptitude install unity，第一种解决方案不成功选则n，使用第二种解决方案
+
+systemctl daemon-reload
+
+sudo service lightdm restart 重启lightdm
+```
