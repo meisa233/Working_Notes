@@ -1,4 +1,4 @@
-# 安装Ubuntu必看
+# 安装Ubuntu16.04必看
 ## 1.安装VMware Tools（虚拟机）
 ### （1）连接CD/DVD 2
 ```
@@ -18,18 +18,18 @@
 ```
 ## 2.修复Ubuntu在自动锁屏后重新登陆时无法输入密码并提示“Failed to authenticate”的bug
 
-见https://github.com/meisa233/Working_Notes/blob/main/gnome_authentication_error_when_logging_in_after_locking.md
+见https://github.com/meisa233/Working_Notes/blob/main/gnome_authentication_error_when_logging_in_after_locking.md<br />
 建议选择【永久解决方案】
 <br />
 ## 3.修复Ubuntu启动时提示SMBus Host controller not enabled的bug
-<br />
-https://github.com/meisa233/Working_Notes/blob/main/SMBus%20Host%20controller%20not%20enabled.md
-<br />
+
+https://github.com/meisa233/Working_Notes/blob/main/SMBus%20Host%20controller%20not%20enabled.md<br />
+
 **如果有这种情况请选择修复**
 
 ## 4.更新apt源
 <br />
-https://github.com/meisa233/Working_Notes/blob/main/Latest_apt_sources_in_China.md
+https://github.com/meisa233/Working_Notes/blob/main/Latest_apt_sources_in_China.md<br />
 升级系统包
 ```
 sudo apt upgrade
