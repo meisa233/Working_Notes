@@ -16,8 +16,8 @@
 
 全部安装完毕后需要reboot（重启）
 ```
-## 2.修复Ubuntu在自动锁屏后重新登陆时无法输入密码并提示“Failed to authenticate”的bug<br />
-<br />
+## 2.修复Ubuntu在自动锁屏后重新登陆时无法输入密码并提示“Failed to authenticate”的bug
+
 见https://github.com/meisa233/Working_Notes/blob/main/gnome_authentication_error_when_logging_in_after_locking.md
 建议选择【永久解决方案】
 <br />
@@ -26,7 +26,7 @@
 https://github.com/meisa233/Working_Notes/blob/main/SMBus%20Host%20controller%20not%20enabled.md
 <br />
 **如果有这种情况请选择修复**
-<br />
+
 ## 4.更新apt源
 <br />
 https://github.com/meisa233/Working_Notes/blob/main/Latest_apt_sources_in_China.md
