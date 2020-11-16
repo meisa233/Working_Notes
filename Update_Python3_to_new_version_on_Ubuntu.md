@@ -43,9 +43,9 @@ sudo ln -s /usr/local/python3/bin/pip3.8 /usr/bin/pip3.8
 ```
 #### (6)检测版本
 ```
-python3 -V
-pip3 -V
+python3.8 -V
+pip3.8 -V
 ```
-将开头的第一行中的```#!/usr/bin/python3```修改为```#!/usr/bin/python3.5```
+
 ### 3.bug:apt安装失败，Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend)
 https://blog.csdn.net/shimadear/article/details/90598646
