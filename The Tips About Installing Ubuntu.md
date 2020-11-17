@@ -56,3 +56,29 @@ systemctl daemon-reload
 
 sudo service lightdm restart 重启lightdm
 ```
+如果界面已经出问题了，并且右键也打不开terminal了，那么需要按照以下步骤修复<br />
+Ctrl+Alt+F1切换到命令行界面<br />
+在虚拟机中，此时系统有可能是上不了网的，需要按照以下步骤重新设置<br />
+可以使用```ifconfig```命令查看是否有自己的（除了127.0.0.1）ip地址<br />
+若没有，则进行修复<br />
+教程来源：https://blog.csdn.net/qq_40141862/article/details/86657408<br />
+```
+su #切换到root用户下
+   #若不知道root用户的密码，使用sudo passwd root进行修改
+dhclient -v
+ifconfig
+```
+然后需要增加DNS解析ip
+```
+sudo vi /etc/resolv.conf
+添加
+nameserver 180.76.76.76
+```
+保存之后即可上网<br />
+```
+sudo apt-get update
+sudo apt-get install --reinstall ubuntu-desktop  
+sudo apt-get install unity 
+systemctl daemon-reload
+reboot
+```
