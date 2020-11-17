@@ -31,6 +31,7 @@ ssh -T git@github.com
 ### 6.push代码
 切换到代码的主目录下
 ```
+git init（如果代码目录下没有.git文件夹请输入此命令）
 git pull #獲取新版本
 git status #獲取需要上傳的檔案 
 git add . # .表示全新增， git add README.md 表示只新增說明檔案
