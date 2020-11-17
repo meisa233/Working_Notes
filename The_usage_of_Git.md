@@ -37,6 +37,7 @@ git status #獲取需要上傳的檔案
 git add . # .表示全新增， git add README.md 表示只新增說明檔案
 git commit -m "add new files" # a commit
 git remote add origin git@github.com:yourgithubname/yourrepositoryname
+git remote remove(如果输入remote地址错误 或 需更改remote地址，请输入这个命令）
 git push -u origin master
 ```
 ## 更新git版本
