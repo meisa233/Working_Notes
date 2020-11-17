@@ -28,7 +28,7 @@ git config --global user.email xxx@gmail.com
 ```
 ssh -T git@github.com
 ```
-## 2.push代码
+### 6.push代码
 切换到代码的主目录下
 ```
 git pull #獲取新版本
@@ -37,4 +37,11 @@ git add . # .表示全新增， git add README.md 表示只新增說明檔案
 git commit -m "add new files" # a commit
 git remote add origin git@github.com:yourgithubname/yourrepositoryname
 git push -u origin master
+```
+## 更新git版本
+```
+sudo add-apt-repository ppa:git-core/ppa
+中间暂停时，按回车键Enter继续安装…
+sudo apt-get update
+sudo apt-get install git
 ```
