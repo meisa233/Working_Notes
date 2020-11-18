@@ -52,7 +52,7 @@ E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is an
 #### 请按顺序执行以下的解决方案
 #### a.杀死占用apt的进程
 ```
-ps aux | grep -i apt
+ps -e | grep apt
 ```
 杀死相关的进程（进程号）
 ```
