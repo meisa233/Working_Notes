@@ -42,6 +42,63 @@ sudo apt upgrade
 sudo rm /var/lib/dpkg/lock
 sudo apt-get update
 ```
+### 若使用apt安装包时遇见E: Could not get lock /var/lib/dpkg/lock-frontend的bug
+具体bug如下提示
+```
+E: Could not get lock /var/lib/dpkg/lock-frontend - open (11: Resource temporarily unavailable)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is another process using it?
+```
+解决方法：https://blog.csdn.net/shimadear/article/details/90598646<br />
+#### 请按顺序执行以下的解决方案
+#### a.杀死占用apt的进程
+```
+ps aux | grep -i apt
+```
+杀死相关的进程（进程号）
+```
+sudo kill -9 <process id>
+```
+或者不执行上面两条，只执行下面这一条
+```
+sudo killall apt apt-get 
+```
+#### b.杀死占用lock file的进程同时删除lock file
+查询占用lock file的进程
+```
+lsof /var/lib/dpkg/lock
+lsof /var/lib/apt/lists/lock
+lsof /var/cache/apt/archives/lock
+```
+如果有相关进程被占用，请kill掉<br />
+然后删除lock file
+```
+sudo rm /var/lib/apt/lists/lock
+sudo rm /var/cache/apt/archives/lock
+sudo rm /var/lib/dpkg/lock
+```
+重新配置一下dpkg
+```
+sudo dpkg --configure -a
+```
+#### c.当执行完a和b仍然会出error
+可能会出现以下提示
+```
+dpkg: error: dpkg frontend is locked by another process
+```
+那么，请按照如下命令进行解决
+找出正在占用lock file的进程
+```
+lsof /var/lib/dpkg/lock-frontend
+```
+杀死占用了lock file的进程（如果上面那个命令被执行后什么都没有，请忽略下面这个命令）
+```
+sudo kill -9 PID
+```
+删除lock file并重新配置dpkg
+```
+sudo rm /var/lib/dpkg/lock-frontend
+sudo dpkg --configure -a
+```
 ## 5.安装Unity
 请务必安装，不然upgrade之后系统的任务栏很有可能会由于某些bug消失。<br />
 来源：https://www.cnblogs.com/aaron-agu/p/10523032.html
