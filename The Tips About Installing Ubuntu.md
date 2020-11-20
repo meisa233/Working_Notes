@@ -139,3 +139,45 @@ sudo apt-get install unity
 systemctl daemon-reload
 reboot
 ```
+## 6.当系统每次重启之后都没网
+教程来源：<br />
+https://askubuntu.com/questions/1009227/network-is-disabled-every-time-i-reboot-ubuntu-16-04-lts-webserver <br />
+https://blog.csdn.net/qq_24338077/article/details/70494797 <br />
+首先按照上一步动态分配ip
+```
+su
+dhclient -v
+ifconfig
+```
+若DNS解析无响应，需添加DNS地址
+```
+sudo vi /etc/resolv.conf
+添加
+nameserver 180.76.76.76
+```
+编辑/etc/network/interfaces文件<br />
+写入以下内容<br />
+```
+auto lo【这一行不用动】
+iface lo inet loopback  【这一行不用动】
+
+auto enp3s0f2 <-- 这个是网卡名
+iface enp3s0f2(网卡名) inet static
+address 192.168.1.125 (静态ip地址) 
+netmask 255.255.255.0 (子网掩码)
+gateway 192.168.1.1   (网关地址)
+dns-nameservers 8.8.8.8 192.168.1.1 (dns地址)
+```
+关闭network管理器
+```
+sudo service network-manager stop
+```
+重启端口
+```
+sudo ifconfig 网卡名 down
+sudo ifconfig 网卡名 up
+```
+启动network管理器
+```
+sudo service network-manager start
+```
