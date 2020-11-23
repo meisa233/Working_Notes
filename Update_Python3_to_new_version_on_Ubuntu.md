@@ -26,10 +26,10 @@ tar zxvf Python-3.8.2.tgz #解压
 ```
 ```
 cd Python-3.8.2
-sudo mkdir -p /usr/local/python3 #建立安装目录
+sudo mkdir -p /usr/local/python3.8 #建立安装目录
 
 #后面加上 --enable-optimizations 会自动安装pip3及优化配置
-./configure --prefix=/usr/local/python3  --enable-optimizations
+./configure --prefix=/usr/local/python3.8  --enable-optimizations
 make -j8 # -j8会加速
 sudo make install
 ```
@@ -37,9 +37,9 @@ sudo make install
 ##### 注意最后一个参数不要与系统本身存在的软连接名字相同!
 ```
 #添加python3的软链接
-sudo ln -s /usr/local/python3/bin/python3.8 /usr/bin/python3.8
+sudo ln -s /usr/local/python3.8/bin/python3.8 /usr/bin/python3.8
 #添加 pip3 的软链接
-sudo ln -s /usr/local/python3/bin/pip3.8 /usr/bin/pip3.8
+sudo ln -s /usr/local/python3.8/bin/pip3.8 /usr/bin/pip3.8
 ```
 #### (6)检测版本
 ```
