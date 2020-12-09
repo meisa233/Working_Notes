@@ -1,7 +1,7 @@
-# 官方主页：https://gridcf.org/gct-docs/6.2/gridftp/index.html
-# gridftp-admin主页：https://gridcf.org/gct-docs/6.2/gridftp/admin/index.html
-# 安装介绍：https://gridcf.org/gct-docs/6.2/admin/install/index.html
-# deb文件列表：https://downloads.globus.org/toolkit/gt6/stable/installers/repo/deb/index.html
+## 官方主页：https://gridcf.org/gct-docs/6.2/gridftp/index.html
+## gridftp-admin主页：https://gridcf.org/gct-docs/6.2/gridftp/admin/index.html
+## 安装介绍：https://gridcf.org/gct-docs/6.2/admin/install/index.html
+## deb文件列表：https://downloads.globus.org/toolkit/gt6/stable/installers/repo/deb/index.html
 ## 安装步骤
 ### 1.下载安装包并安装
 ```
@@ -36,3 +36,20 @@ globus% globus-url-copy -list sshftp://127.0.0.1/tmp/
 ### 3.使用说明
 官方的用户文档
 https://gridcf.org/gct-docs/6.2/gridftp/user/index.html
+简单的example:
+```
+globus-url-copy -vb -p 8 file:/path/to/local/file sshftp://username@remoteurl/path/to/remote/folder
+```
+```
+-vb
+specifies verbose mode and displays:
+
+number of bytes transferred,
+
+performance since the last update (currently every 5 seconds), and
+
+average performance for the whole transfer.
+
+-p
+Specifies the number of parallel data connections that should be used. This is one of the most commonly used options.
+```
