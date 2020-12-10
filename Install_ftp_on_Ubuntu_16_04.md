@@ -47,3 +47,10 @@ sudo service vsftpd restart
 ftp
 >open 服务器的ip地址
 ```
+### 10.Windows上的使用
+```
+ftp
+open <ip_addr>
+put <source file> [target file (name)]
+bye
+```
