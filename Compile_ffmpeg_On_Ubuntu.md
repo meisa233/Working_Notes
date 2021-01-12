@@ -146,3 +146,95 @@ PATH="$HOME/bin:$PATH" ./configure --prefix="$HOME/ffmpeg_build" --bindir="$HOME
 PATH="$HOME/bin:$PATH" make && \
 make install
 ```
+#### (6) libopus
+配置时的选项
+```
+--enable-libopus
+```
+安装
+```
+sudo apt-get install libopus-dev
+```
+或者
+```
+cd ~/ffmpeg_sources && \
+git -C opus pull 2> /dev/null || git clone --depth 1 https://github.com/xiph/opus.git && \
+cd opus && \
+./autogen.sh && \
+./configure --prefix="$HOME/ffmpeg_build" --disable-shared && \
+make && \
+make install
+```
+#### (7) libaom
+```
+cd ~/ffmpeg_sources && \
+git -C aom pull 2> /dev/null || git clone --depth 1 https://aomedia.googlesource.com/aom && \
+mkdir -p aom_build && \
+cd aom_build && \
+PATH="$HOME/bin:$PATH" cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="$HOME/ffmpeg_build" -DENABLE_SHARED=off -DENABLE_NASM=on ../aom && \
+PATH="$HOME/bin:$PATH" make && \
+make install
+```
+注意：<br />
+由于aom在墙外，在国内git clone的话是很容易出现以下错误的：<br />
+```
+fatal: unable to access 'https://aomedia.googlesource.com/aom/': Failed to connect to aomedia.googlesource.com port 443: Timed out
+```
+解决方法来源：https://blog.csdn.net/listener51/article/details/79505812
+<br />
+git config --global http.proxy http://127.0.0.1:梯子的端口号
+<br />
+要查看端口号，请查看梯子的设置<br />
+
+#### (8) libsvtav1
+```
+--enable-libsvtav1
+```
+```
+cd ~/ffmpeg_sources && \
+git -C SVT-AV1 pull 2> /dev/null || git clone https://github.com/AOMediaCodec/SVT-AV1.git && \
+mkdir -p SVT-AV1/build && \
+cd SVT-AV1/build && \
+PATH="$HOME/bin:$PATH" cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="$HOME/ffmpeg_build" -DCMAKE_BUILD_TYPE=Release -DBUILD_DEC=OFF -DBUILD_SHARED_LIBS=OFF .. && \
+PATH="$HOME/bin:$PATH" make && \
+make install
+```
+#### (9) ffmpeg
+```
+cd ~/ffmpeg_sources && \
+wget -O ffmpeg-snapshot.tar.bz2 https://ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2 && \
+tar xjvf ffmpeg-snapshot.tar.bz2 && \
+cd ffmpeg && \
+PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./configure \
+  --prefix="$HOME/ffmpeg_build" \
+  --pkg-config-flags="--static" \
+  --extra-cflags="-I$HOME/ffmpeg_build/include" \
+  --extra-ldflags="-L$HOME/ffmpeg_build/lib" \
+  --extra-libs="-lpthread -lm" \
+  --bindir="$HOME/bin" \
+  --enable-gpl \
+  --enable-gnutls \
+  --enable-libaom \
+  --enable-libass \
+  --enable-libfdk-aac \
+  --enable-libfreetype \
+  --enable-libmp3lame \
+  --enable-libopus \
+  --enable-libsvtav1 \
+  --enable-libvorbis \
+  --enable-libvpx \
+  --enable-libx264 \
+  --enable-libx265 \
+  --enable-nonfree && \
+PATH="$HOME/bin:$PATH" make && \
+make install && \
+hash -r
+```
+```
+source ~/.profile
+```
+```
+ffmpeg (also ffplay, ffprobe, lame, x264, & x265) 这些都可以使用了
+```
+ffmpeg的二进制文件地址：~/bin <br />
+如果需要其他用户也可以使用ffmpeg，请将~/bin/下的文件复制到/usr/local/bin
