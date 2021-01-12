@@ -29,6 +29,9 @@ sudo apt-get update -qq && sudo apt-get -y install \
 ### 2.创建临时文件夹ffmpeg_sources和bin
 ffmpeg_sources:存放所有的源码
 bin：存放所有的二进制文件（可执行文件）
+```
+mkdir -p ~/ffmpeg_sources ~/bin
+```
 ### 3.编译和安装
 请注意：这份指导假定我们只想安装**大部分**第三方库。<br />
 该节下的每一小节包含了在编译过程中的安装第三方库的指令所需要的的依赖包的安装过程。<br />
