@@ -1,7 +1,7 @@
 # deploy the program of slicing and transcoding
 ## 1 Install Ubuntu 16.04
 ### a.Download image
-Ubuntu release website:https://releases.ubuntu.com/16.04/
+Ubuntu release website:https://releases.ubuntu.com/16.04/ <br />
 Please choose **64-bit PC (AMD64) desktop image**
 ### b.Install Ubuntu 16.04 from source
 ### c.repleace the source of apt
