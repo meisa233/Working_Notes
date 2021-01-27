@@ -53,3 +53,15 @@ deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-proposed main restricted universe
 deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
 ```
 
+## Tips:Everything up-to-date -- the problem about git
+When you want to update your code use command "git push -u origin". <br />
+It tells you "Everything up-to-date" and nothing changed in your github. <br />
+Please follow these steps:
+```
+git add .
+git status
+git commit -m "update" #input your content
+git push -u origin
+```
+Another solution:https://blog.csdn.net/myhuashengmi/article/details/52197566 <br />
+But up to 2021.1.27, I can't solve the problem according to the link above. <br />
